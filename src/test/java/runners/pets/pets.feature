@@ -31,13 +31,8 @@ Feature: Pets Store test script
     When method post
     Then status 200
 
-    #* def id = response.id
-    #* print 'created id is: ', id
-
-    #Given path id
-    # When method get
-    # Then status 200
-    # And match response contains user
+    * def id = response.id
+    * print 'created id is: ', id
 
   Scenario: get pet by id
 
@@ -45,6 +40,8 @@ Feature: Pets Store test script
 
     When method get
     Then status 200
+    * def responseData = response
+    * match responseData == '#object'
 
   Scenario: update a pet - add pet to store
 
@@ -69,3 +66,7 @@ Feature: Pets Store test script
     And param status = sold
     When method get
     Then status 200
+
+    * def responseData = response
+    * match responseData[0].id == '#number'
+    * match responseData[0].status == 'sold'
