@@ -1,0 +1,6 @@
+# Conclusiones
+Las llamadas para manipulación de objetos (Creación/Edición) no contemplan uso de autenticación obligatoria por seguridad.
+Faltan entidades que documenten los valores correctos esperados para dar de alta una mascota - Por ejemplo un CRUD de categorías.
+Los códigos de respuesta no siguen los estandares:
+ POST - Retorna 200 - Generalmente para un POST de Creación se espera 201
+ PUT/PATCH - Para actualizar registros se usa una llamada POST en lugar de PUT o PATCH
